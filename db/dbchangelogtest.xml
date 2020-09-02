@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+      <changeSet author="gargm1" id="132">
+
+<preConditions onFail="MARK_RAN">
+    <not>
+        <tableExists tableName="aggregate"/>
+    </not>
+</preConditions>
+   
+    <createTable tableName="aggregate" schemaName="public">
+      <column name="aggregate_id" type="Numeric" >
+      
+      </column>
+      <column name="aggregate_name" type="VARCHAR(255)">
+         <constraints nullable="false"/>
+      </column>
+       <column name="aggregate_desc" type="VARCHAR(255)">
+         <constraints nullable="false"/>
+      </column>
+
+
+    </createTable>
+	
+	 <createTable tableName="aggregateTest" schemaName="public">
+      <column name="aggregate_id" type="Numeric" >
+      
+      </column>
+      <column name="aggregate_name" type="VARCHAR(255)">
+         <constraints nullable="false"/>
+      </column>
+       <column name="aggregate_desc" type="VARCHAR(255)">
+         <constraints nullable="false"/>
+      </column>
+
+
+    </createTable>
+	
+  </changeSet>
+  
+
+
+</databaseChangeLog>
